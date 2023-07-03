@@ -9,7 +9,7 @@ var $link;
         ob_start();
   // Get the main settings from the array we just loaded
         $host = 'localhost';
-        $db = 'client_arb_lms';
+        $db = 'lms-v2_capstonedb';
         $user = 'root';
         $pass = '';
 
@@ -26,7 +26,7 @@ function DbConnector(){
 
         // Get the main settings from the array we just loaded
         $host = 'localhost';
-        $db = 'client_arb_lms';
+        $db = 'lms-v2_capstonedb';
         $user = 'root';
         $pass = '';
 
