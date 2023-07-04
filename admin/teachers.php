@@ -24,8 +24,10 @@
 										<thead>
 										    <tr>
                                     <th></th>
+                                    <th>ID</th>
                                     <th>Photo</th>
                                     <th>Name</th>
+                                    <th>Password</th>
                                     <th>Username</th>
 
                                     <th></th>
@@ -42,8 +44,11 @@
 										<td width="30">
 										<input id="optionsCheckbox" class="uniform_on" name="selector[]" type="checkbox" value="<?php echo $id; ?>">
 										</td>
+
+                                    <td><?php echo $row['teacher_id'];?></td>     
                                     <td width="40"><img class="img-circle" src="<?php echo $row['location']; ?>" height="50" width="50"></td> 
                                     <td><?php echo $row['firstname'] . " " . $row['lastname']; ?></td> 
+                                    <td><?php echo $row['password']; ?></td> 
                                     <td><?php echo $row['username']; ?></td> 
                                
 									<td width="50"><a href="edit_teacher.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i></a></td>
