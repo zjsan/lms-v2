@@ -3,17 +3,21 @@
         margin-top: 3rem;
         font-size: 25px
     }
+
+
 </style>
 
-<p style>To reset your password, submit your username. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.</p>
-<div class = "forgotpassword-container">
-    <form id="forgot_password" class="form-forgotpassword" method="POST">
 
-						<h3 class="form-signin-heading"><i class="icon-lock"></i>Search by Username</h3>
-						<input type="text" class="input-block-level" id="username" name="username" placeholder="Username" required><br><br>
-						<input type="text" class="input-block-level" id="newpassword" name="newpassword" placeholder="New Password" required><br><br>
-						<input type="text" class="input-block-level" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
-                        <button data-placement="right" title="Click Here to Search" id="search_username" name="search_username" class="btn btn-info" type="submit"><i class="icon-signin icon-large"></i>Search</button>
+
+<?php include('header.php'); ?>
+
+<p style>To reset your password, submit your username. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.</p>
+<div class="container" style="position: relative">
+    <form id="forgot_password" class="form-signin"method="POST">
+						<input type="text" class="input-block-level" id="forgot_username" name="username" placeholder="Username" required><br><br>
+						<input type="password" class="input-block-level" id="newpassword" name="newpassword" placeholder="New Password" required><br><br>
+						<input type="password" class="input-block-level" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+                        <button data-placement="right" title="Click Here to Search" id="search_username" name="search_username" class="btn btn-info" type="submit"><i class="icon-signin icon-large"></i>Submit</button>
                         <br><br>
 														<script type="text/javascript">
 														$(document).ready(function(){
@@ -47,6 +51,7 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 		 $row_teacher = mysqli_fetch_array($query_teacher);
 
 		//check username in the database
+		//student
 		if( $num_row > 0 ) { 
 		
 			//for debugging
@@ -55,13 +60,14 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 
 			if($newpassword == $confirmpassword)
 			{
-
+				//$passwordQuery = "SELECT * FROM student WHERE username='$username'"
 			}
 			else{
 				echo '<script type="text/javascript">
 				alert("Passwords do not match");
 				</script>';
 			}
+		//teacher
 		}else if ($num_row_teacher > 0){
 
 			//for debugging
