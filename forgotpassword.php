@@ -13,7 +13,7 @@
 
 <p style>To reset your password, submit your username. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.</p>
 <div class="container" style="position: relative">
-    <form id="forgot_password" class="form-signin"method="POST">
+    <form id="forgot_password" class="form-signin"  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 						<input type="text" class="input-block-level" id="forgot_username" name="username" placeholder="Username" required><br><br>
 						<input type="password" class="input-block-level" id="newpassword" name="newpassword" placeholder="New Password" required><br><br>
 						<input type="password" class="input-block-level" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
@@ -34,7 +34,7 @@ include('admin/dbcon.php');
 
 if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['newpassword']) && isset($_POST['newpassword']) && !empty($_POST['confirmpassword']) && isset($_POST['confirmpassword']))
     {
-
+	
     	$username = $_POST['username'];
 		$newpassword = $_POST['newpassword'];
 		$confirmpassword = $_POST['confirmpassword'];
@@ -61,7 +61,13 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 			if($newpassword == $confirmpassword)
 			{
 				//update password in the database
-				$update = "UPDATE student set password = '$newpassword' WHERE username = '$username'";	
+				$query_result = mysqli_query($conn,"SELECT password FROM student WHERE username = '$username'")or die(mysqli_error());//checking if update is working
+				$result = mysqli_fetch_array($query_result);
+				echo $query_result;
+				echo '<script type="text/javascript">
+				alert("Password has been");
+				</script>';
+			}
 			}
 			else{
 				echo '<script type="text/javascript">
@@ -78,7 +84,12 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 			if($newpassword == $confirmpassword)
 			{
 				//update password in the database
-				$update = "UPDATE student set password = '$newpassword' WHERE username = '$username'";	
+				$query_result = mysqli_query($conn,"SELECT password FROM teacher WHERE username = '$username'")or die(mysqli_error());//checking if update is working
+				$result = mysqli_fetch_array($query_result);
+				echo $query_result;
+				echo '<script type="text/javascript">
+				alert("Password has been");
+				</script>';
 			}
 			else{
 				echo '<script type="text/javascript">
@@ -93,5 +104,4 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 			alert("Username is not in the Database, Check your Input");
 			</script>';
 		}	
-	}
 ?>
