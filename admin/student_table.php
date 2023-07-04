@@ -12,7 +12,6 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Password</th>
-					<th>Username</th>
 			
 					<th>Course Yr & Section</th>
 		</tr>
@@ -37,8 +36,6 @@
 
 		<td><?php echo $row['lastname'];?></td>
 		<td><?php echo $row['password'] //password?></td> 
-
-		<td><?php echo $row['username']; ?></td> 
 	
 		<td width="100"><?php echo $row['class_name']; ?></td> 
 	
