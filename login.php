@@ -1,12 +1,12 @@
 <?php
-		if(session_status() !== PHP_SESSION_ACTIVE){
-			session_start();
-		}
+
+			
+		include('session.php');
+		include('admin/dbcon.php');
+
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		
-		include('admin/dbcon.php');
-		
+
 		if(!empty($password)) {
 			/* student */
 			$query = "SELECT * FROM student WHERE username='$username' AND password='$password' AND `status`='Registered'";

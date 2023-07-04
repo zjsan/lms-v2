@@ -39,7 +39,10 @@
 								return false;
 							});
 						});
-						</script>
+			
+			</script>
+
+			<!--
 			<div id="button_form" class="form-signin" >
 				New to TCSF OLMS
 				<hr>
@@ -50,6 +53,7 @@
 					<button data-placement="top" title="Sign Up as Teacher" id="signup_teacher" onclick="window.location='signup_teacher.php'" name="login" class="btn btn-info" type="submit">I`m a Teacher</button>
 				</div>
 			</div>
+					-->
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$('#signup_student').tooltip('show'); 
