@@ -23,3 +23,41 @@
 														</script>								
 			</form>		
 </div>
+<?php
+
+include('admin/dbcon.php');
+
+
+$username = $_POST['username'];
+
+if(!empty($_POST['username']) && isset($_POST['username']))
+    {
+    	
+    	//checks if username in mysql
+ 		$sql = "SELECT customer_id,customer_email, customer_password FROM customer WHERE customer_email = '$email' AND customer_password = '$psword'";
+ 		$data = $connection->query($sql);
+ 		 //var_dump($data);
+
+ 	   //if matched login	 
+ 	   if($data->num_rows > 0)
+       {
+       		session_start();
+       		$row = $data->fetch_assoc();
+       		$_SESSION["customer_id"] = $row['customer_id'];
+    
+       		echo '<script type="text/javascript">
+				alert("Welcome!");
+				window.location.href = "home.php";
+				</script>';
+       }
+       //else not registered
+       else
+       {
+       		echo '<script type="text/javascript">
+				alert("Please Register Your Account!");
+				window.location.href = "login.php";
+				</script>';
+       }
+	
+	}
+?>
