@@ -28,7 +28,7 @@
 include('admin/dbcon.php');
 
 
-if(!empty($_POST['username']) && isset($_POST['username']))
+if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['newpassword']) && isset($_POST['newpassword']) && !empty($_POST['confirmpassword']) && isset($_POST['confirmpassword']))
     {
 
     	$username = $_POST['username'];
