@@ -29,7 +29,7 @@
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Password</th>
-                                    <th>Username</th>
+                             
 
                                     <th></th>
                                 </tr>
@@ -51,7 +51,7 @@
                                     <td><?php echo $row['firstname']; ?></td>
                                     <td><?php echo $row['lastname']; ?></td> 
                                     <td><?php echo $row['password']; ?></td> 
-                                    <td><?php echo $row['username']; ?></td> 
+                                   
                                
 									<td width="50"><a href="edit_teacher.php<?php echo '?id='.$id; ?>" class="btn btn-success"><i class="icon-pencil"></i></a></td>
 							
