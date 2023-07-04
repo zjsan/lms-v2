@@ -55,14 +55,14 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 		if( $num_row > 0 ) { 
 		
 			//for debugging
-			echo 'true_student';
-			echo $username;
+			//echo 'true_student';
+			//echo $username;
 
 			if($newpassword == $confirmpassword)
 			{
 				//update password in the database
 				$query_result = mysqli_query($conn,"UPDATE student SET password = '$newpassword' WHERE username = '$username'")or die(mysqli_error());//checking if update is working
-				$result = mysqli_fetch_array($query_result);
+	
 				echo '<script type="text/javascript">
 				alert("Password has been changed");
 				</script>';
@@ -77,14 +77,13 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 		}else if ($num_row_teacher > 0){
 
 			//for debugging
-			echo 'true';
-			echo $username;
+			//echo 'true';
+			//echo $username;
 
 			if($newpassword == $confirmpassword)
 			{
 				//update password in the database
 				$query_result = mysqli_query($conn,"UPDATE teacher SET password = '$newpassword' WHERE username = '$username'")or die(mysqli_error());//checking if update is working
-				$result = mysqli_fetch_array($query_result);
 			
 				echo '<script type="text/javascript">
 				alert("Password has been changed");
