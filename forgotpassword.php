@@ -60,7 +60,8 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 
 			if($newpassword == $confirmpassword)
 			{
-				//$passwordQuery = "SELECT * FROM student WHERE username='$username'"
+				//update password in the database
+				$update = "UPDATE student set password = '$newpassword' WHERE username = '$username'";	
 			}
 			else{
 				echo '<script type="text/javascript">
@@ -76,7 +77,8 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 
 			if($newpassword == $confirmpassword)
 			{
-				
+				//update password in the database
+				$update = "UPDATE student set password = '$newpassword' WHERE username = '$username'";	
 			}
 			else{
 				echo '<script type="text/javascript">
