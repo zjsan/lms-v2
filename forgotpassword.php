@@ -7,8 +7,6 @@
 
 <p style>To reset your password, submit your username. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.</p>
 <div class = "forgotpassword-container">
-    
-</div>
     <form id="forgot_password" class="form-forgotpassword" method="POST">
 
 						<h3 class="form-signin-heading"><i class="icon-lock"></i>Search by Username</h3>
@@ -31,9 +29,7 @@ include('admin/dbcon.php');
 if(!empty($_POST['username']) && isset($_POST['username']))
     {
 
-	
     	$username = $_POST['username'];
-
 
 		 /* student */
 		 $query = "SELECT * FROM student WHERE username='$username'";
@@ -59,8 +55,10 @@ if(!empty($_POST['username']) && isset($_POST['username']))
 		}
 		else
 		{ 
-			
 			echo 'false';
+			echo '<script type="text/javascript">
+			alert("Check Your Username");
+			</script>';
 		}	
 	}
 ?>
