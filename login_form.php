@@ -8,7 +8,9 @@
 															$('#signin').tooltip('show');
 															$('#signin').tooltip('hide');
 														});
-														</script>		
+														</script>	
+														
+						<a href="forgotpassword" style = 'float:right;'>Forgot Password?</a>
 			</form>
 						<script>
 						jQuery(document).ready(function(){
