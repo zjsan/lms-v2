@@ -63,9 +63,8 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 				//update password in the database
 				$query_result = mysqli_query($conn,"UPDATE student SET password = '$newpassword' WHERE username = '$username'")or die(mysqli_error());//checking if update is working
 				$result = mysqli_fetch_array($query_result);
-				echo $query_result;
 				echo '<script type="text/javascript">
-				alert("Password has been");
+				alert("Password has been changed");
 				</script>';
 			}
 			}
@@ -84,12 +83,11 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 			if($newpassword == $confirmpassword)
 			{
 				//update password in the database
-				"UPDATE sms SET  name ='$studName', cpno ='$cpNumb' WHERE studno = '$studNumb' "
 				$query_result = mysqli_query($conn,"UPDATE teacher SET password = '$newpassword' WHERE username = '$username'")or die(mysqli_error());//checking if update is working
 				$result = mysqli_fetch_array($query_result);
-				echo $query_result;
+			
 				echo '<script type="text/javascript">
-				alert("Password has been");
+				alert("Password has been changed");
 				</script>';
 			}
 			else{
