@@ -9,7 +9,8 @@
 					<th></th>
 				
 					<th>ID Number</th>
-					<th>Name</th>
+					<th>First Name</th>
+					<th>Last Name</th>
 					<th>Password</th>
 					<th>Username</th>
 			
@@ -32,8 +33,9 @@
 		
 		<td><?php echo $row['student_id'] //inserted student id?></td> 
 
-		<td><?php echo $row['firstname'] . " " . $row['lastname']; ?></td> 
+		<td><?php echo $row['firstname']; ?></td> 
 
+		<td><?php echo $row['lastname'];?></td>
 		<td><?php echo $row['password'] //password?></td> 
 
 		<td><?php echo $row['username']; ?></td> 
