@@ -10,7 +10,9 @@
     <form id="forgot_password" class="form-forgotpassword" method="POST">
 
 						<h3 class="form-signin-heading"><i class="icon-lock"></i>Search by Username</h3>
-						<input type="text" class="input-block-level" id="username" name="username" placeholder="Username" required>
+						<input type="text" class="input-block-level" id="username" name="username" placeholder="Username" required><br><br>
+						<input type="text" class="input-block-level" id="newpassword" name="newpassword" placeholder="New Password" required><br><br>
+						<input type="text" class="input-block-level" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
                         <button data-placement="right" title="Click Here to Search" id="search_username" name="search_username" class="btn btn-info" type="submit"><i class="icon-signin icon-large"></i>Search</button>
                         <br><br>
 														<script type="text/javascript">
@@ -30,6 +32,8 @@ if(!empty($_POST['username']) && isset($_POST['username']))
     {
 
     	$username = $_POST['username'];
+		$newpassword = $_POST['newpassword'];
+		$confirmpassword = $_POST['confirmpassword'];
 
 		 /* student */
 		 $query = "SELECT * FROM student WHERE username='$username'";
@@ -42,22 +46,43 @@ if(!empty($_POST['username']) && isset($_POST['username']))
 		 $num_row_teacher = mysqli_num_rows($query_teacher);
 		 $row_teacher = mysqli_fetch_array($query_teacher);
 
+		//check username in the database
 		if( $num_row > 0 ) { 
 		
 			//for debugging
 			echo 'true_student';
 			echo $username;
+
+			if($newpassword == $confirmpassword)
+			{
+
+			}
+			else{
+				echo '<script type="text/javascript">
+				alert("Passwords do not match");
+				</script>';
+			}
 		}else if ($num_row_teacher > 0){
 
 			//for debugging
 			echo 'true';
 			echo $username;
+
+			if($newpassword == $confirmpassword)
+			{
+				
+			}
+			else{
+				echo '<script type="text/javascript">
+				alert("Passwords do not match");
+				</script>';
+			}
 		}
 		else
 		{ 
 			echo 'false';
 			echo '<script type="text/javascript">
-			alert("Check Your Username");
+			alert("Username is not in the Database, Check your Input");
 			</script>';
 		}	
 	}
