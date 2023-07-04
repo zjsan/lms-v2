@@ -10,7 +10,7 @@
 														});
 														</script>	
 														
-						<a href="forgotpassword" style = 'float:right;'>Forgot Password?</a>
+						<a href="forgotpassword.php" style = 'float:right;'>Forgot Password?</a>
 			</form>
 						<script>
 						jQuery(document).ready(function(){
