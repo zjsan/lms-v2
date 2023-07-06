@@ -11,7 +11,6 @@
 
 <?php include('header.php'); ?>
 
-<p style>To reset your password, submit your username. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.</p>
 <div class="container" style="position: relative">
     <form id="forgot_password" class="form-signin"  action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 						<input type="text" class="input-block-level" id="forgot_username" name="username" placeholder="Username" required><br><br>
@@ -74,7 +73,8 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 				</script>';
 			}
 		//teacher
-		}else if ($num_row_teacher > 0){
+		}
+		else if ($num_row_teacher > 0){
 
 			//for debugging
 			//echo 'true';
@@ -97,7 +97,6 @@ if(!empty($_POST['username']) && isset($_POST['username']) && !empty($_POST['new
 		}
 		else
 		{ 
-			echo 'false';
 			echo '<script type="text/javascript">
 			alert("Username is not in the Database, Check your Input");
 			</script>';
