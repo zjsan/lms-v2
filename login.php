@@ -19,7 +19,12 @@
 
     if ($numStudentRows > 0) {
         $_SESSION['id'] = $studentRow['student_id'];
-        echo 'true_student';
+
+        mysqli_query($conn,"SELECT student.username, user_log.login_date, user_log.logout_date
+									FROM student INNER JOIN user_log ON student.student_id = user_log.user_log_id") or die(mysqli_error());
+	    mysqli_query($conn,"insert into user_log (username,login_date,user_id) values('$username',NOW(),".$studentRow['student_id'].")")or die(mysqli_error());
+        echo 'true';
+            
     } else if ($numTeacherRows > 0) {
         $_SESSION['id'] = $teacherRow['teacher_id'];
         echo 'true';
