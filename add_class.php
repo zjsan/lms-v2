@@ -15,7 +15,6 @@
 											<?php
 											$query = mysqli_query($conn,"select * from class order by class_name");
 											while($row = mysqli_fetch_array($query)){
-											 
 											?>
 											<option value="<?php echo $row['class_id']; ?>"><?php echo $row['class_name']; ?></option>
 											<?php } ?>
