@@ -78,7 +78,7 @@
 						}else{
 							$.jGrowl("Classs Successfully  Added", { header: 'Class Added' });
 							var delay = 500;
-							setTimeout(function(){ window.location = 'dasboard_teacher.php'  }, delay);  
+							//setTimeout(function(){ window.location = 'dasboard_teacher.php'  }, delay);  
 						}
 						}
 					});
