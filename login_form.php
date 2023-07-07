@@ -1,4 +1,4 @@
-			<form id="login_form1" class="form-signin" method="post">
+<form id="login_form1" class="form-signin" method="post">
 						<h3 class="form-signin-heading"><i class="icon-lock"></i> Sign in</h3>
 						<input type="text" class="input-block-level" id="username" name="username" placeholder="Username" required>
 						<input type="password" class="input-block-level" id="password" name="password" placeholder="Password" required>
