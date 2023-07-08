@@ -77,8 +77,8 @@
 						$.jGrowl("Class Already Exist", { header: 'Add Class Failed' });
 						}else{
 							$.jGrowl("Classs Successfully  Added", { header: 'Class Added' });
-							var delay = 500;
-							//setTimeout(function(){ window.location = 'dasboard_teacher.php'  }, delay);  
+							var delay = 900;
+							setTimeout(function(){ window.location = 'dasboard_teacher.php'  }, delay);  
 						}
 						}
 					});
