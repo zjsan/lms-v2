@@ -8,7 +8,7 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 
-.clearfix {
+ .clearfix {
   *zoom: 1;
 }
 
@@ -65,18 +65,18 @@
   display: inherit !important;
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) {
   .hidden-desktop {
-    display: inherit !important;
+    display: none !important;
   }
   .visible-desktop {
-    display: none !important ;
+    display: inherit !important ;
   }
   .visible-tablet {
-    display: inherit !important;
+    display: none !important;
   }
   .hidden-tablet {
-    display: none !important;
+    display: inherit !important;
   }
 }
 
@@ -109,28 +109,7 @@
 }
 
 @media (min-width: 1200px) {
-  .row {
-    margin-left: -30px;
-    *zoom: 1;
-  }
-  .row:before,
-  .row:after {
-    display: table;
-    line-height: 0;
-    content: "";
-  }
-  .row:after {
-    clear: both;
-  }
-  [class*="span"] {
-    float: left;
-    min-height: 1px;
-    margin-left: 30px;
-  }
-  .container,
-  .navbar-static-top .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
+  .container {
     width: 1170px;
   }
   .span12 {
@@ -204,19 +183,6 @@
   }
   .offset1 {
     margin-left: 130px;
-  }
-  .row-fluid {
-    width: 100%;
-    *zoom: 1;
-  }
-  .row-fluid:before,
-  .row-fluid:after {
-    display: table;
-    line-height: 0;
-    content: "";
-  }
-  .row-fluid:after {
-    clear: both;
   }
   .row-fluid [class*="span"] {
     display: block;
